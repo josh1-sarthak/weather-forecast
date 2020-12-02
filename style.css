@@ -1,0 +1,27 @@
+body {
+    font-family: monospace;
+}
+
+h1 {
+    text-align: center;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: none;
+    margin: auto;
+    height: 500px;
+    width: 80vw;
+}
+
+#left {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+#right {
+    border: 2px solid black;
+    padding: 10px;
+}
+
