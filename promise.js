@@ -7,7 +7,7 @@ const getData = () => {
     let choice = form.querySelector('input[name="tempUnit"]:checked').value;
     form.reset();
 
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchKey}&units=${choice}&appid=d5a6321f1fc003fa5677807979b6abd1`, {mode: 'cors'})
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchKey}&units=${choice}&appid=d5a6321f1fc003fa5677807979b6abd1`, {mode: 'cors'})
     .then((response) => {
         return response.json();
     })

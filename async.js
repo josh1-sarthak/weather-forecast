@@ -7,7 +7,7 @@ const getData = async () => {
     let choice = form.querySelector('input[name="tempUnit"]:checked').value;
     form.reset();
 
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchKey}&units=${choice}&appid=d5a6321f1fc003fa5677807979b6abd1`, {mode: 'cors'})
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchKey}&units=${choice}&appid=d5a6321f1fc003fa5677807979b6abd1`, {mode: 'cors'})
     const data = await response.json();
     const weatherData = weatherFactory(data.name, data.sys.country, data.coord, data.visibility, data.sys.sunrise, data.sys.sunset, data.weather[0].description, data.wind.speed, data.main);
     const unit = choice === 'metric' ?  '\xB0C' : 'F';
