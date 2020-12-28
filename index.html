@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Weather-Forecast </title>
+</head>
+
+<body>
+    <h1> Weather-Forecast </h1>
+    <div id="content">
+        <div id="left">
+            <form id="form">
+                <p>
+                <label for="location"> What's the location? <abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input id="location" type="text" required>
+                </p>
+                <p>
+                <fieldset>
+                    <legend> Which unit to display data in? <abbr title="This field is mandatory" aria-label="required">*</abbr> </legend>
+                     <input type="radio" required name="tempUnit" id="r1" value="metric">
+                     <label for="r1">Celsius</label>
+                     <input type="radio" required name="tempUnit" id="r2" value="imperial">
+                     <label for="r2">Fahrenheit</label>
+                </fieldset>
+                </p>
+                <p>
+                <button> Click Me! </button>
+                </p>
+            </form>
+        </div>
+        <div id="right">
+            
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
