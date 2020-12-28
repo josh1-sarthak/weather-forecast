@@ -12,3 +12,4 @@ Weather forecast app involving the use of OpenWeather API calls.
 - DOM Manipulation
 - Objects and Factory Functions
 - Built-in HTML Forms
+- Webpack

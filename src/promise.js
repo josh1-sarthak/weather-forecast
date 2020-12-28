@@ -1,5 +1,10 @@
+import "./style.css";
+
+
 const btn = document.querySelector('button');
 const rightSection = document.querySelector('#right');
+const leftSection = document.querySelector('#left');
+
 
 const getData = () => {
     const form = document.querySelector('form');
@@ -26,11 +31,16 @@ const getData = () => {
         <strong> Minimum Temp </strong>: ${weatherData.crux.temp_min} ${unit} <br>
         <strong> Maximum Temp </strong>: ${weatherData.crux.temp_max} ${unit} <br>
         <strong> Humidity </strong>: ${weatherData.crux.humidity} % <br>
+        <span class="temp"> ${weatherData.crux.temp} ${unit} </span> <br>
         `
         rightSection.innerHTML=content;
         
         const status = weatherData.description;
+        const currCity = weatherData.name;
+
         displayImage(status);
+        displayCity(currCity);
+
     });
 }
 
@@ -42,10 +52,21 @@ const displayImage = (status) => {
     })
     .then(function(response) {
         const imageUrl= response.data.images.original.url;
-        rightSection.style.backgroundImage = `url('${imageUrl}')`;
+        rightSection.style.background =`linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${imageUrl}')`;               
+
     });
 }
+    const displayCity = (currCity) => {
+    fetch(` https://cors-anywhere.herokuapp.com/http://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${currCity}`, {mode: 'cors'})
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response) {
+        const imageUrl= response.data.images.original.url;
+        leftSection.style.background =`linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${imageUrl}')`;       
 
+    });
+}
     
 const weatherFactory = (name, country, coordinates, visibility, sunrise, sunset, description, windSpeed, crux) => {
 const riseDate= new Date(sunrise*1000);
