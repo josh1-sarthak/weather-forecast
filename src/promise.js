@@ -1,4 +1,4 @@
-import "./style.css";
+import './style.css';
 
 
 const btn = document.querySelector('button');
@@ -12,13 +12,13 @@ const getData = () => {
     let choice = form.querySelector('input[name="tempUnit"]:checked').value;
     form.reset();
 
-    fetch(` https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${searchKey}&units=${choice}&appid=d5a6321f1fc003fa5677807979b6abd1`, {mode: 'cors'})
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchKey}&units=${choice}&appid=d5a6321f1fc003fa5677807979b6abd1`, {mode: 'cors'})
     .then((response) => {
         return response.json();
     })
     .then((data) => { // data is nothing but response.json()
         const weatherData = weatherFactory(data.name, data.sys.country, data.coord, data.visibility, data.sys.sunrise, data.sys.sunset, data.weather[0].description, data.wind.speed, data.main);
-        const unit = choice === 'metric' ?  '\xB0C' : 'F';
+        const unit = choice === 'metric' ?  '&#8451' : 'F';
         const content=`
         <strong> City </strong>: ${weatherData.name} <br>
         <strong> Country </strong>: ${weatherData.country} <br>
@@ -57,13 +57,13 @@ const displayImage = (status) => {
     });
 }
     const displayCity = (currCity) => {
-    fetch(` https://cors-anywhere.herokuapp.com/http://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${currCity}`, {mode: 'cors'})
+    fetch(`http://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${currCity}`, {mode: 'cors'})
     .then(function(response) {
       return response.json();
     })
     .then(function(response) {
         const imageUrl= response.data.images.original.url;
-        leftSection.style.background =`linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${imageUrl}')`;       
+        document.body.style.background =`linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${imageUrl}')`;       
 
     });
 }
