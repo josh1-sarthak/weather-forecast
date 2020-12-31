@@ -2,8 +2,8 @@
 
 ## Brief Intro
 Weather forecast app involving the use of OpenWeather API and Giphy API calls.
-- Left Section- contains form to query the current weather of entered City along with preferred unit of temperature.
-- Right Section - retrieves the current weather stats along with the background resembling the weather.
+- box in the middle- contains form to query the current weather of entered City along with preferred unit of temperature and displaying weather stats
+- Background of both the box and whole page changes dynamically according to the weather status and city.
 
 
 ## Skills Demonstrated
