@@ -2,8 +2,8 @@ import './style.css';
 
 
 const btn = document.querySelector('button');
-const rightSection = document.querySelector('#right');
-const leftSection = document.querySelector('#left');
+const bottomSection = document.querySelector('#bottom');
+const topSection = document.querySelector('#top');
 
 
 const getData = () => {
@@ -33,7 +33,7 @@ const getData = () => {
         <strong> Humidity </strong>: ${weatherData.crux.humidity} % <br>
         <span class="temp"> ${weatherData.crux.temp} ${unit} </span> <br>
         `
-        rightSection.innerHTML=content;
+        bottomSection.innerHTML=content;
         
         const status = weatherData.description;
         const currCity = weatherData.name;
@@ -52,7 +52,7 @@ const displayImage = (status) => {
     })
     .then(function(response) {
         const imageUrl= response.data.images.original.url;
-        rightSection.style.background =`linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${imageUrl}')`;               
+        bottomSection.style.background =`linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${imageUrl}')`;               
 
     });
 }

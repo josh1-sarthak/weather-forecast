@@ -1,5 +1,8 @@
 body {
     font-family: monospace;
+    font-size: 20px;
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("https://images.unsplash.com/photo-1516912481808-3406841bd33c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1366&q=80");
+    background-position: center center;
 }
 
 h1 {
@@ -15,15 +18,15 @@ h1 {
     width: 40vw;
 }
 
-#left {
+#top {
     border: 2px dashed black;
     padding: 10px;
 }
 
-#right {
+#bottom {
     border: 2px dashed black;
     padding: 10px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .temp {
@@ -34,3 +37,19 @@ h1 {
     color: white;
 }
 
+button {
+    background-color: #736372;
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    border-radius: 4px;
+    width: 150px;
+    height: 20px;
+}
