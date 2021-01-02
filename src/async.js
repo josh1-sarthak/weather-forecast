@@ -10,7 +10,7 @@ const getData = async () => {
     let choice = form.querySelector('input[name="tempUnit"]:checked').value;
     form.reset();
 
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchKey}&units=${choice}&appid=d5a6321f1fc003fa5677807979b6abd1`, {mode: 'cors'})
+    const response = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${searchKey}&units=${choice}&appid=d5a6321f1fc003fa5677807979b6abd1`, {mode: 'cors'})
     const data = await response.json();
     const weatherData = weatherFactory(data.name, data.sys.country, data.coord, data.visibility, data.sys.sunrise, data.sys.sunset, data.weather[0].description, data.wind.speed, data.main);
     const unit = choice === 'metric' ?  '&#8451' : 'F';
@@ -38,14 +38,14 @@ const getData = async () => {
 
 
 const displayImage = async (status) => {
-    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${status}`, {mode: 'cors'})
+    const response = await fetch(`https://cors-anywhere.herokuapp.com/http://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${status}`, {mode: 'cors'})
     const imgResponse = await response.json();
     const imageUrl= imgResponse.data.images.original.url;
     bottomSection.style.background =`linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${imageUrl}')`;               
 }
 
 const displayCity = async (currCity) => {
-    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${currCity}`, {mode: 'cors'})
+    const response = await fetch(`https://cors-anywhere.herokuapp.com/http://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${currCity}`, {mode: 'cors'})
     const imgResponse = await response.json();
     const imageUrl= imgResponse.data.images.original.url;
     document.body.style.background =`linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${imageUrl}')`;       
