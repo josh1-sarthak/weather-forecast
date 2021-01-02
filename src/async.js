@@ -38,14 +38,14 @@ const getData = async () => {
 
 
 const displayImage = async (status) => {
-    const response = await fetch(`http://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${status}`, {mode: 'cors'})
+    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${status}`, {mode: 'cors'})
     const imgResponse = await response.json();
     const imageUrl= imgResponse.data.images.original.url;
     bottomSection.style.background =`linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${imageUrl}')`;               
 }
 
 const displayCity = async (currCity) => {
-    const response = await fetch(`http://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${currCity}`, {mode: 'cors'})
+    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${currCity}`, {mode: 'cors'})
     const imgResponse = await response.json();
     const imageUrl= imgResponse.data.images.original.url;
     document.body.style.background =`linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${imageUrl}')`;       
