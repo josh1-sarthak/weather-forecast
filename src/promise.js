@@ -12,7 +12,7 @@ const getData = () => {
     let choice = form.querySelector('input[name="tempUnit"]:checked').value;
     form.reset();
 
-    fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${searchKey}&units=${choice}&appid=d5a6321f1fc003fa5677807979b6abd1`, {mode: 'cors'})
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchKey}&units=${choice}&appid=d5a6321f1fc003fa5677807979b6abd1`, {mode: 'cors'})
     .then((response) => {
         return response.json();
     })
@@ -46,7 +46,7 @@ const getData = () => {
 
 
 const displayImage = (status) => {
-    fetch(`https://cors-anywhere.herokuapp.com/http://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${status}`, {mode: 'cors'})
+    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${status}`, {mode: 'cors'})
     .then(function(response) {
       return response.json();
     })
@@ -57,7 +57,7 @@ const displayImage = (status) => {
     });
 }
     const displayCity = (currCity) => {
-    fetch(`https://cors-anywhere.herokuapp.com/http://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${currCity}`, {mode: 'cors'})
+    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=REwSrYlYVnhDXZ3iv8yhevyx1irXVk4F&s=${currCity}`, {mode: 'cors'})
     .then(function(response) {
       return response.json();
     })
